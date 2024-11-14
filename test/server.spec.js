@@ -48,7 +48,7 @@ describe("pruebas relacionadas a usuarios", () => {
             password2: '123456711'
         });
         expect(response.statusCode).toBe(400)
-        expect(response.text).toBe("las contraseñas no coinciden");
+        expect(response.text).toBe("Las contraseñas no coinciden");
     })
     it("que falte un campo por ejemplo name", async () => {
         const response = await request(app).post('/api/auth/register')
@@ -62,7 +62,7 @@ describe("pruebas relacionadas a usuarios", () => {
             password2: '12345678'
         });
         expect(response.statusCode).toBe(404)
-        expect(response.text).toBe("debes ingresar email, direccion, nombre, region, telefono, comuna y password");
+        expect(response.text).toBe("Faltan campos obligatorios");
     })
     it("ingresar un email que ya existe", async () => {
         const response = await request(app).post('/api/auth/register')
